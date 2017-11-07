@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NameService} from './name.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  names: any[];
+
+    constructor(private nameService: NameService) {
+      this.names = this.nameService.names;
+    }
+
+    onSubmit(form) {
+      if (form.valid && form.value && form.value.username.length) {
+          this.nameService.onAdd(form.value.username);
+          form.reset();
+      }
+    }
+
 }
+

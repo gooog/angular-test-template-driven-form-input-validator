@@ -1,0 +1,15 @@
+form {
+    margin: auto;
+}
+
+input {
+    width: 600px;
+    height: 60px;
+    font-size: 30px;
+    padding: 6px;
+}
+
+input.ng-invalid {
+    boredr: 2px solid red;
+    background: indianred;
+}
